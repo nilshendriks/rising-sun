@@ -1,75 +1,25 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
+  --color-japanese-red: #bc002d;
+  --color-japanese-red-bright: #ee0001;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-sun: var(--color-japanese-red-bright);
+
+  --color-backgroud-primary: var(--color-white);
+
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+@supports (font-variation-settings: normal) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+    font-family: InterVariable, sans-serif;
   }
 }
 
@@ -81,18 +31,8 @@
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: 100%;
+  line-height: 1.5;
 }
 
 a {
@@ -100,8 +40,70 @@ a {
   text-decoration: none;
 }
 
+#sky {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* background-color: #fff; */
+  background-color: var(--color-backgroud-primary);
+  overflow: hidden;
+}
+
+#sky * {
+  margin: 0;
+}
+
+#sun, #fake-sun {
+  left: calc(50% - 25vmin);
+  mix-blend-mode: difference;
+  animation-name: SunBottomToCenter, ScaleSun;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards, both;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 0s, 2s;
+  animation-duration: 1s, 8s;
+}
+
+#fake-sun, #sun {
+  position: absolute;
+}
+
+#fake-sun {
+  pointer-events: none;
+}
+
+@keyframes SunBottomToCenter {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: calc(50% - 25vmin);
+  }
+}
+
+@keyframes ScaleSun {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* dark mode */
 @media (prefers-color-scheme: dark) {
+  :root {
+    --color-backgroud-primary: var(--color-black);
+  }
+
   html {
     color-scheme: dark;
+  }
+
+  #fake-sun svg circle {
+    fill: var(--color-backgroud-primary);
   }
 }

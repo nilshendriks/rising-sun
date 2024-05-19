@@ -1,0 +1,24 @@
+.TemperatureDisplay {
+  /* background-color: pink; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TemperatureDisplay__temperature {
+  font-size: clamp(64px, 20vmin, 150px);
+  font-weight: 900;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 2s ease-in-out;
+  width: 100%;
+}
+
+.TemperatureDisplay__temperature .degree {
+  font-weight: normal;
+}

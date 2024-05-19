@@ -1,0 +1,54 @@
+.LocationCard {
+  /* background-color: aliceblue; */
+  width: 100vw;
+  flex: 1 0 auto;
+  height: 100%;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: center;
+}
+
+.LocationCard__location {
+  font-size: 20px;
+  font-weight: 100;
+  animation: locationMoveIn 1s ease-in-out;
+}
+
+.LocationCard__time {
+  font-size: 1rem;
+  font-weight: 100;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.LocationCard__suninfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.LocationCard__suninfo p {
+  display: flex;
+  gap: 4px;
+  color: gray;
+}
+
+@keyframes locationMoveIn {
+  from {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
