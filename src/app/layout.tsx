@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "Rising Sun",
   description: "A Japanese weather application",
   manifest: './manifest.json',
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
 };
 
 export const viewport: Viewport = {
