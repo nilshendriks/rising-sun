@@ -1,9 +1,11 @@
 {
+  "id": "/",
   "name": "Rising Sun",
   "short_name": "Rising Sun",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
+  "theme_color": "#ee0001",
   "description": "Weather app with a twist",
   "icons": [
     {

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import type { Viewport } from 'next'
 import { Inter } from "next/font/google";
-import Head from "next/head";
+// import Head from "next/head";
+import ServiceWorkerRegistration from '../components/ServiceWorkerRegistration';
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,6 +31,7 @@ export default function RootLayout({
         id="sky"
         className={inter.className}
       >
+        <ServiceWorkerRegistration />
         {children}
       </body>
     </html>
