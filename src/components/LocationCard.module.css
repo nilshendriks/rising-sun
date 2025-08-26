@@ -1,5 +1,4 @@
 .LocationCard {
-  /* background-color: aliceblue; */
   width: 100vw;
   flex: 1 0 auto;
   height: 100%;
@@ -12,13 +11,15 @@
 
 .LocationCard__location {
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
   animation: locationMoveIn 1s ease-in-out;
 }
 
 .LocationCard__time {
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 300;
   animation: fadeIn 2s ease-in-out;
 }
 
@@ -30,7 +31,7 @@
 .LocationCard__suninfo p {
   display: flex;
   gap: 4px;
-  color: gray;
+  color: var(--color-black);
 }
 
 @keyframes locationMoveIn {
