@@ -2,7 +2,7 @@
   width: 100vw;
   flex: 1 0 auto;
   height: 100%;
-  padding: 1rem;
+padding: 1rem 1rem 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -28,11 +28,14 @@
   justify-content: space-between;
 }
 
-.LocationCard__suninfo p {
+.LocationCard__suninfo div {
   display: flex;
   gap: 4px;
-  color: var(--color-black);
+  color: var(--color-japanese-red, yellow);
 }
+
+.LocationCard__sunrise {}
+.LocationCard__sunset {}
 
 @keyframes locationMoveIn {
   from {

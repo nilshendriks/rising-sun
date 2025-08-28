@@ -76,8 +76,12 @@ const LocationCard: FC<LocationCardProps> = ({ location, unit }) => {
       </div>
       <TemperatureDisplay location={location} unit={unit} />
       <div className={styles.LocationCard__suninfo}>
-        <p><Sunrise /> <DateTimeDisplay dateTime={sunrise} /></p>
-        <p><Sunset /> <DateTimeDisplay dateTime={sunset} /></p>
+        <div className={styles.LocationCard__sunrise}>
+          <Sunrise /> <DateTimeDisplay dateTime={sunrise} />
+        </div>
+        <div className={styles.LocationCard__sunset}>
+          <Sunset /> <DateTimeDisplay dateTime={sunset} />
+        </div>
       </div>
     </div>
   );
