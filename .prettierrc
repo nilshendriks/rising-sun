@@ -1,0 +1,42 @@
+{
+  "printWidth": 80,
+  "tabWidth": 4,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "tabWidth": 2,
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["*.{css,scss,less,js,mjs,cjs,ts,tsx,json,json5,yml,yaml}"],
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.md", "*.markdown", "*.mdx"],
+      "options": {
+        "tabWidth": 2,
+        "embeddedLanguageFormatting": "off"
+      }
+    },
+    {
+      "files": ["*.{astro,html,twig,pug}"],
+      "options": {
+        "tabWidth": 4,
+        "embeddedLanguageFormatting": "off"
+      }
+    },
+    {
+      "files": [".liquid"],
+      "options": {
+        "parser": "html",
+        "tabWidth": 4,
+        "embeddedLanguageFormatting": "off"
+      }
+    }
+  ],
+  "ignore": [".editorconfig"]
+}

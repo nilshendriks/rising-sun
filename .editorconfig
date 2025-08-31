@@ -1,0 +1,25 @@
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Set default charset
+[*.{js,py}]
+charset = utf-8
+
+# Languages / formats that conventionally or technically require 2 spaces
+[*.{js,jsx,ts,tsx,css,scss,less,json,json5,yml,yaml}]
+indent_size = 2
+
+[*.pug]
+indent_size = 2
+
+[*.{md,markdown,mdx}]
+indent_size = 2
+trim_trailing_whitespace = false

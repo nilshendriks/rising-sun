@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./page.module.css";
 import LocationCard from "@/components/LocationCard";
 
@@ -8,7 +8,7 @@ export default function Home() {
 
       <div id="sun">
         <svg width="50vmin" height="50vmin" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="25vmin" cy="25vmin" r="25vmin" style={{ fill: 'var(--color-sun, red)' }}></circle>
+          <circle cx="25vmin" cy="25vmin" r="25vmin" ></circle>
         </svg>
       </div>
 

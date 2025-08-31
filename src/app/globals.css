@@ -1,20 +1,29 @@
 :root {
   --color-japanese-red: #bc002d;
+  --color-jp-red-2: #ff001a;
+  --color-jp-red-2-aa: #ec0018;
+  --color-japanese-red-oklch: oklch(0.46 0.25 29.2);
+  --color-japanese-red-oklch-pop: oklch(0.46 0.38 29.2);
   --color-japanese-red-bright: #ee0001;
+  --color-jp-red-2-oklch: oklch(0.63 0.31 29);
+  --color-jp-red-2-oklch-pop: oklch(0.63 0.42 29);
   --color-black: #000;
   --color-white: #fff;
-  --color-sun: var(--color-japanese-red-bright);
+  --color-sun: var(--color-jp-red-2-oklch-pop);
 
   --color-backgroud-primary: var(--color-white);
 
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+  --font-mono:
+    ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 }
 
 :root {
   font-family: Inter, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1;
 }
 
 @supports (font-variation-settings: normal) {
@@ -53,7 +62,8 @@ a {
   margin: 0;
 }
 
-#sun, #fake-sun {
+#sun,
+#fake-sun {
   left: calc(50% - 25vmin);
   mix-blend-mode: difference;
   animation-name: SunBottomToCenter, ScaleSun;
@@ -64,7 +74,8 @@ a {
   animation-duration: 1s, 8s;
 }
 
-#fake-sun, #sun {
+#fake-sun,
+#sun {
   position: absolute;
 }
 
@@ -106,4 +117,10 @@ a {
   #fake-sun svg circle {
     fill: var(--color-backgroud-primary);
   }
+}
+
+#sun svg circle {
+  fill: var(--color-sun, red);
+  fill: color(display-p3 1 0 0.07);
+  /* fill: oklch(0.58 0.52 29); */
 }

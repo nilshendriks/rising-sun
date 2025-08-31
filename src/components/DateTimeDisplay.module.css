@@ -1,3 +1,4 @@
 .DateTimeDisplay {
-color: var(--color-japanese-red, red);
+  /* color: var(--color-japanese-red, red); */
+  color: var(--color-jp-red-2-aa, red);
 }
