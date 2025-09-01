@@ -26,6 +26,7 @@
 .LocationCard__suninfo {
   display: flex;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .LocationCard__suninfo div {

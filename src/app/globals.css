@@ -53,14 +53,13 @@ a {
   position: relative;
   width: 100%;
   height: 100svh;
-  /* background-color: #fff; */
   background-color: var(--color-backgroud-primary);
   overflow: hidden;
 }
 
-#sky * {
-  margin: 0;
-}
+/* #sky * { */
+/*   margin: 0; */
+/* } */
 
 #sun,
 #fake-sun {
