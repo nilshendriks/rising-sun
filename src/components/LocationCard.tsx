@@ -15,8 +15,8 @@ interface LocationCardProps {
 
 const LocationCard: FC<LocationCardProps> = ({ lat, lon, unit }) => {
   const [locationName, setLocationName] = useState<string>("");
-  const [tempC, setTempC] = useState<number | null>(null);
-  const [tempF, setTempF] = useState<number | null>(null);
+  const [tempC, setTempC] = useState<number | undefined>(undefined);
+  const [tempF, setTempF] = useState<number | undefined>(undefined);
   const [timezone, setTimezone] = useState<string>("");
   const [sunrise, setSunrise] = useState<string | null>(null);
   const [sunset, setSunset] = useState<string | null>(null);
@@ -81,7 +81,7 @@ const LocationCard: FC<LocationCardProps> = ({ lat, lon, unit }) => {
       <div className={styles.LocationCard__time}>
         {timezone && <DateTimeDisplay dateTime={moment.tz(currentDeviceTime, timezone).format()} showDate={true} />}
       </div>
-      {showTemperature && tempC !== null && (
+      {showTemperature && tempC !== undefined && (
         <TemperatureDisplay temp_c={tempC} temp_f={tempF} unit={unit} />
       )}
       <div className={styles.LocationCard__suninfo}>
