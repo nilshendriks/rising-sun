@@ -13,14 +13,8 @@ export default function Home() {
       </div>
 
       <div className={styles.GridCards}>
-        <LocationCard
-          location="Tokyo"
-          unit="C"
-        />
-        <LocationCard
-          location="Amsterdam, The Netherlands"
-          unit="C"
-        />
+        <LocationCard lat={35.69} lon={139.69} unit="C" />
+        <LocationCard lat={52.37} lon={4.89} unit="C" />
       </div>
       <div id="fake-sun">
         <svg width="50vmin" height="50vmin" xmlns="http://www.w3.org/2000/svg">
